@@ -1,0 +1,14 @@
+button {
+  border: 10px solid rgba(2, 178, 90, .8);
+  border-radius: 20px;
+  margin: 240px 480px;
+  font-family: cursive;
+  color: white;
+  background-color: rgba(65, 101, 243, .9);
+  font-size: 2em;
+
+}
+
+body {
+  background-color: lightgrey;
+}
