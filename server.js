@@ -18,7 +18,7 @@ var adjective = new Adjective();
 var verb = new Verb();
 var noun = new Noun();
 
-app.get('https://arcane-waters-5216.herokuapp.com/', function(req, res) {
+app.get('/', function(req, res) {
   res.sendFile('index.html');
 });
 
