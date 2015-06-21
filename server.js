@@ -5,6 +5,7 @@ var bodyparser = require('body-parser');
 var Adjective = require('./lib/adjective.js')
 var Verb = require('./lib/verb.js')
 var Noun = require('./lib/noun.js')
+var BandName = require('./lib/bandname.js')
 var getRandomWord = require('./lib/getRandomWord.js')
 var postRandomWord = require('./lib/postRandomWord.js')
 var app = express();
@@ -17,6 +18,7 @@ app.use(express.static(__dirname + '/app/'));
 var adjective = new Adjective();
 var verb = new Verb();
 var noun = new Noun();
+var bandname = new BandName();
 
 app.get('/', function(req, res) {
   res.sendFile('index.html');
@@ -48,6 +50,11 @@ app.post('/noun', function(req, res) {
   var word = postRandomWord(req.body.word, noun);
   res.json(word);
 });
+
+app.post('/bandname', function(req, res) {
+  var word = postBandName(req.body.word, bandname);
+  res.json(word);
+})
 
 app.listen(port, function() {
   console.log('server available at localhost: ' + port);

@@ -2,16 +2,16 @@
 <html>
 <head>
   <title>DA RANDOM BUTTON</title>
-<!--   <link href="button.css" rel="stylesheet" title="Default Style">
- --></head>
+  <link href="button.css" rel="stylesheet" title="Default Style">
+</head>
   <body>
 
     <button id="funButton">Click this button for some fun!</button>
 
     <p>
     Your name:
-    <span id="adjective"></span> <span id="verb"></span>
-    <span id="noun"></span></p>
+    <div id="bandname"><span id="adjective"></span> <span id="verb"></span>
+    <span id="noun"></span></p></div><button id="save">Save</button>
 
     <h3>Submit words!</h3>
     <form id="submitWords">
@@ -26,11 +26,13 @@
        <input type="submit" value="Submit Words">
     </form>
 
-    <p id='adjectiveRes'></p>
-    <p id='verbRes'></p>
-    <p id='nounRes'></p>
+    <p id="adjectiveRes"></p>
+    <p id="verbRes"></p>
+    <p id="nounRes"></p>
+
+    <ul id="favorites"></ul>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"> </script>
-    <script type="text/javascript" src="../script.js"></script>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

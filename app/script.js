@@ -20,6 +20,15 @@ $(function () {
     });
   });
 
+  $('#save').on('click',
+  function (e) {
+    e.preventDefault();
+
+    var bandname = $('#bandname').text();
+    var bandPost = {word: bandname};
+    $.post(asdf, bandPost, function() )
+  });
+
   $('#submitWords').on('submit', function(e) {
     e.preventDefault();
 
