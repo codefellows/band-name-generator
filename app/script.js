@@ -21,13 +21,14 @@ $(function () {
   });
 
   $('#save').on('click',
-  function (e) {
-    e.preventDefault();
+  function () {
+    var bandname = $("#bandname").text(); //grabs bandname text
+    $.post("bandname", bandname, function(response) {
+      bandname.fadeOut('slow/400/fast', function() {
+      }).text('Saved');
+    });
 
-    var bandname = $('#bandname').text();
-    var bandPost = {word: bandname};
-    $.post(asdf, bandPost, function() )
-  });
+  }
 
   $('#submitWords').on('submit', function(e) {
     e.preventDefault();

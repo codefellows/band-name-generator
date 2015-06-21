@@ -8,6 +8,7 @@ var Noun = require('./lib/noun.js')
 var BandName = require('./lib/bandname.js')
 var getRandomWord = require('./lib/getRandomWord.js')
 var postRandomWord = require('./lib/postRandomWord.js')
+var postBandName = require('./lib/postBandName.js')
 var app = express();
 var port = process.env.PORT || 3000;
 
@@ -52,9 +53,8 @@ app.post('/noun', function(req, res) {
 });
 
 app.post('/bandname', function(req, res) {
-  var word = postBandName(req.body.word, bandname);
-  res.json(word);
-})
+  res.json(req);
+});
 
 app.listen(port, function() {
   console.log('server available at localhost: ' + port);
