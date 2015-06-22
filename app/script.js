@@ -27,8 +27,7 @@ $(function () {
       bandname.fadeOut('slow/400/fast', function() {
       }).text('Saved');
     });
-
-  }
+  });
 
   $('#submitWords').on('submit', function(e) {
     e.preventDefault();
