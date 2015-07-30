@@ -9,13 +9,13 @@ $(function() {
  				$("#adjective").text(adjective);
 		});
 
-		$.get("verb", function(response){
+		$.get("#verb", function(response){
 			console.log(response);
  			var verb = response.word;
  			$("#verb").text(verb);
 		});
 
-		$.get("noun", function(response){
+		$.get("#noun", function(response){
 			console.log(response);
  			var noun = response.word;
  				$("#noun").text(noun);
