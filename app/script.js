@@ -1,23 +1,25 @@
-$(function(){
+'use strict';
 
-  $('#name').click(function(){
-    $.get('adjective', function(response){
+$(function() {
+
+  $('#name').click(function() {
+    $.get('adjective', function(response) {
       var adjective = response.word;
       $('#adjective').text(adjective);
 
     });
   });
 
-  $('#name').click(function(){
-    $.get('noun', function(response){
+  $('#name').click(function() {
+    $.get('noun', function(response) {
       var noun = response.word;
       $('#noun').text(noun);
 
     });
   });
 
-  $('#name').click(function(){
-    $.get('verb', function(response){
+  $('#name').click(function() {
+    $.get('verb', function(response) {
       var verb = response.word;
       $('#verb').text(verb);
 
@@ -26,7 +28,7 @@ $(function(){
 
   // make an event handler that, when a button is clicked
   // sends a POST request to our server
-  $('#wordSubmit').on('submit', function (e){
+  $('#wordSubmit').on('submit', function(e) {
     e.preventDefault();
 
     // gt the text entered in the text box and save it to a variable
@@ -39,26 +41,26 @@ $(function(){
     var noun = $('input[name=noun]').val();
     var nounPost;
 
-    if (verb){
+    if (verb) {
       verbPost = {word: verb};
-      $.post('verb', verbPost, function(response){
+      $.post('verb', verbPost, function(response) {
         var serverResponse = response.message;
         $('#verbRes').text(serverResponse);
 
       });
     }
 
-    if (adjective){
+    if (adjective) {
       adjectivePost = {word: adjective};
-      $.post('adjective', adjectivePost, function(response){
+      $.post('adjective', adjectivePost, function(response) {
         var serverResponse = response.message;
         $('#adjectiveRes').text(serverResponse);
       });
     }
 
-    if (noun){
+    if (noun) {
       nounPost = {word: noun};
-      $.post('noun', nounPost, function(response){
+      $.post('noun', nounPost, function(response) {
         var serverResponse = response.message;
         $('#nounRes').text(serverResponse);
 
