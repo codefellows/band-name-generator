@@ -2,6 +2,8 @@ var express = require("express");
 var app = express();
 var port = process.env.PORT || 3000;
 
+app.use(express.static(__dirname + "/app/"));
+
 function Adjective(){
   this.happy = true;
   this.evil = true;
@@ -28,10 +30,11 @@ app.get('/adjective', function(req, res){
 });
 
 app.get("/", function(req, res){
-  res.send("hello universe!");
+  res.sendFile('index.html');
 });
 
 app.listen(port, function(){
   console.log('server started on port, access at localhost:' + port);
-  console.log(getRandomWord(adjective))
+  console.log(getRandomWord(adjective));
 });
+
