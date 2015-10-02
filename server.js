@@ -2,6 +2,8 @@ var express = require("express") // "require" is node-specific
                                 // "express" in quotes is the package name
 var app = express();
 
+app.use(express.static(__dirname + "/app/"));
+
 var Adjective = (function() {
   this.happy = true,
   this.sad = true,
@@ -24,7 +26,7 @@ var port = process.env.PORT || 3000;
 
 //now we're going to start a server on your local machine at port 3000 (talks to the server)
 app.get("/", function (req, res) {
-  res.send("hello universe!");
+  res.sendFil('index.html');
 });
 
 app.get("/adjective", function (req, res) {
@@ -34,5 +36,6 @@ app.get("/adjective", function (req, res) {
 app.listen(port, function() {
   console.log('server started on port ' + port);
 });
+
 
 
