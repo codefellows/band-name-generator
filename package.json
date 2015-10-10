@@ -3,10 +3,13 @@
   "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codefellows/band-name-generator"
+    "url": "https://github.com/kyleschnirring/band-name-generator"
   },
   "description": "Example Site for JavaScript F2 at Code Fellows",
   "dependencies": {
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "lodash": "^3.10.1"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
