@@ -48,10 +48,12 @@ app.post('/adjective', function(req, res) {
   var word = postWord(req.body.word, adjective);
   res.json(word);
 });
+
 app.post('/noun', function(req, res) {
   var word = postWord(req.body.word, noun);
   res.json(word);
 });
+
 app.post('/verb', function(req, res) {
   var word = postWord(req.body.word, verb);
   res.json(word);
