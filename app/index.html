@@ -3,30 +3,48 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-        <!-- Add your site or application content here -->
-        <p>Hello, World.</p>
-        <button id="name">Get a random band name!</button>
-        <p>Get ready to <span id="verb"></span> the <span id="adjective"></span> <span id="noun"></span>!!!</p>
-        <hr>
-        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
-        <script src="script.js"></script>
-        <img src="http://media2.giphy.com/media/A6XISxDsthHGw/giphy.gif" alt="corgi swing">
-        <img src="http://static.fjcdn.com/gifs/Corgis+because+corgis+corgis+why+because+motherfucking+corgis_b30417_4548482.gif" alt="corgi vacuum">
-        <img src="http://static2.fjcdn.com/thumbnails/comments/I+like+corgi+s+and+these+gifs+that+are+being+posted+_73f1d53f60d016cab1de41038d9001b2.gif" alt="corgi stampede">
-        <img src="http://i.imgur.com/oKJTQ.gif" alt="corgi dive">
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    </body>
+    <!-- Add your site or application content here -->
+    <p>Hello, World.</p>
+    <button id="name">Get a random band name!</button>
+    <p>Get ready to
+      <span id="verb">run from</span> the
+      <span id="adjective">Flying</span>
+      <span id="noun">Monkeys</span>!!!</p>
+    <hr>
+    <br>
+    <h3>Submit words!</h3>
+    <form id="submitWords">
+      <label>Give us an verb:</label><input type="text" name="verb">
+      <label>Give us an adjective:</label><input type="text" name="adjective">
+      <label>Give us an noun:</label><input type="text" name="noun">
+      <input type="submit" value="Submit Words"/>
+    </form>
+
+
+    <p id='verbRes'></p>
+    <p id='adjectiveRes'></p>
+    <p id='nounRes'></p>
+      </hr>
+      <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+      <script src="script.js"></script>
+
+      <img src="http://media2.giphy.com/media/A6XISxDsthHGw/giphy.gif" alt="corgi swing">
+      <img src="http://static.fjcdn.com/gifs/Corgis+because+corgis+corgis+why+because+motherfucking+corgis_b30417_4548482.gif" alt="corgi vacuum">
+      <img src="http://static2.fjcdn.com/thumbnails/comments/I+like+corgi+s+and+these+gifs+that+are+being+posted+_73f1d53f60d016cab1de41038d9001b2.gif" alt="corgi stampede">
+      <img src="http://i.imgur.com/oKJTQ.gif" alt="corgi dive">
+      <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+  </body>
 </html>

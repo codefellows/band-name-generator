@@ -1,68 +1,66 @@
-var express = require("express") // "require" is node-specific
-                                // "express" in quotes is the package name
+'use strict';
+
+var express = require('express');
 var app = express();
-
-app.use(express.static(__dirname + "/app/"));
-
-var Adjective = (function() {
-  this.Happy = true,
-  this.Sad = true,
-  this.Funny = true,
-  this.Clever = true,
-  this.Bright = true
-});
-
-var Noun = (function() {
-  this.Dogs = true,
-  this.Penguins = true,
-  this.Cows = true,
-  this.Goats = true,
-  this.Lobsters = true
-});
-
-var Verb = (function() {
-  this.hear = true,
-  this.smell = true,
-  this.experience = true,
-  this.see = true
-});
+var bodyParser = require('body-parser');
+var port = process.env.PORT || 3000;
+var Adjective = require('./lib/adjective.js');
+var Noun = require('./lib/noun.js');
+var Verb = require('./lib/verb.js');
+var getRandomWord = require('./lib/getRandomWord.js');
+var postWord = require('./lib/postWord.js');
 
 var adjective = new Adjective();
 var noun = new Noun();
 var verb = new Verb();
 
-function getRandomWord (object) {
-  var propArray = Object.keys(object);
-  var randomProp = propArray[Math.floor(Math.random() * propArray.length)];
-  return {word: randomProp};
-}
+// function getRandomWord (object) {
+//   var propArray = Object.keys(object);
+//   var randomProp = propArray[Math.floor(Math.random() * propArray.length)];
+//   // return {word: randomProp};
+// }
 
-function properName(x) {
-  var word = getRandomWord(x)
-  return word.charAt(0).toUpperCase() + word.slice(1, word.length);
-};
+// function properName(x) {
+//   var word = getRandomWord(x)
+//   // return word.charAt(0).toUpperCase() + word.slice(1, word.length);
+// };
 
-var port = process.env.PORT || 3000;
-//everying above creates the server
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
-//now we're going to start a server on your local machine at port 3000 (talks to the server)
-app.get("/", function (req, res) {
-  res.sendFile('index.html');
-});
+app.use(express.static(__dirname + '/app/'));
 
-app.get("/adjective", function (req, res) {
+app.get('/adjective', function(req, res) {
   res.json(getRandomWord(adjective));
 });
-app.get("/noun", function (req, res) {
-  res.json(getRandomWord(noun));
-});
-app.get("/verb", function (req, res) {
+
+app.get('/verb', function(req, res) {
   res.json(getRandomWord(verb));
 });
 
-app.listen(port, function() {
-  console.log('server started on port ' + port);
+app.get('/noun', function(req, res) {
+  res.json(getRandomWord(noun));
 });
 
+app.post('/adjective', function(req, res) {
+  var word = postWord(req.body.word, adjective);
+  res.json(word);
+});
+app.post('/noun', function(req, res) {
+  var word = postWord(req.body.word, noun);
+  res.json(word);
+});
+app.post('/verb', function(req, res) {
+  var word = postWord(req.body.word, verb);
+  res.json(word);
+});
 
+app.get('/', function(req, res) {
+  res.sendFile('index.html');
+});
 
+app.listen(port, function() {
+  console.log('server starting. available at http://localhost:' + port);
+});
