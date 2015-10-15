@@ -1,11 +1,11 @@
 {
-  "name": "simple-site",
+  "name": "jack-sneed-band-name-app",
   "version": "0.0.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/codefellows/band-name-generator"
+    "url": "https://github.com/JackSSS/band-name-generator"
   },
-  "description": "Example Site for JavaScript F2 at Code Fellows",
+  "description": "Lab 3 for JavaScript F2 at Code Fellows",
   "dependencies": {
     "express": "^4.13.3"
   },
